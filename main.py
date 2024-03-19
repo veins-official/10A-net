@@ -121,7 +121,7 @@ if __name__ == "__main__":
                 iters_count += 1
                 optimizer.step()
 
-            print(f"EPOCH: { epoch }, ACCURACY: { "{:.2f}".format((accuracy_val / iters_count) * 100) }%")
+            print(f"EPOCH: { epoch }, ACCURACY: { (accuracy_val / iters_count) * 100 }%")
             accuracy_list.append((accuracy_val / iters_count) * 100)
 
         with open(accuracy_path, "a" if OLD_MODEL else "w") as file: file.write("\n".join([str(num) for num in accuracy_list]) + "\n")
